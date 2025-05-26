@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <form method="POST">
+        {% csrf_token %}
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        <h2>Create an Account</h2>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="btn-primary">Sign Up</button>
+        <p class="form-switch">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </form>
+</div>
+{% endblock %}
